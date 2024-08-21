@@ -1,0 +1,15 @@
+pipeline { 
+    agent any 
+    stages{ 
+        stage("git clone stage"){ 
+            steps{ 
+                git branch: 'main',url:'https://github.com/mohansourcecode/node1.git'
+            }
+        }
+        stage("print all the files"){
+            steps{
+                sh 'ls -l'
+            }
+        }
+    }
+}
