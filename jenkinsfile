@@ -50,7 +50,9 @@ pipeline {
             }
         }
         stage("performign trivy  image scan"){
-            sh 'trivy image mohancode:1.0 > trivyimage.txt'
+            steps{
+            sh 'trivy image mohannode:1.0 > trivyimage.txt'
+        }
         }
 
     }
