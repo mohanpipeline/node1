@@ -26,6 +26,12 @@ pipeline {
                 sh 'ls -l'
             }
         }
+
+        stage("perform the sonar-scanner"){
+            steps{
+                sh 'sonar-scanner'
+            }
+        }
         stage("performign the trivy scan"){
             steps{
                 sh 'trivy fs . > trivyfs.txt'
@@ -34,6 +40,11 @@ pipeline {
         stage("displaying files"){
             steps{
                 sh 'ls -l'
+            }
+        }
+        stage("performing owasp test"){
+            steps{
+                sh
             }
         }
 
@@ -54,6 +65,7 @@ pipeline {
             sh 'trivy image mohannode:1.0 > trivyimage.txt'
         }
         }
+    
 
     }
 }
