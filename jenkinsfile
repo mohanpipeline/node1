@@ -37,5 +37,11 @@ pipeline {
             }
         }
 
+        stage("displaying the content"){
+            steps{
+                sh 'cat trivyfs.txt'
+            }
+        }
+
     }
 }
