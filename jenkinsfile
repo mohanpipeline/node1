@@ -11,5 +11,10 @@ pipeline {
                 sh 'ls -l'
             }
         }
+        stage("performing the npm install"){
+            steps{
+                sh 'npm install'
+            }
+        }
     }
 }
