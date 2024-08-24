@@ -31,6 +31,11 @@ pipeline {
                 sh 'trivy fs . > trivyfs.txt'
             }
         }
+        stage("displaying files"){
+            steps{
+                sh 'ls -l'
+            }
+        }
 
     }
 }
