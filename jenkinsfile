@@ -44,7 +44,9 @@ pipeline {
         }
         stage("building the dcoker image"){
             steps{
-                sh 'docker build -t mohannode:1.0 .'
+                // sh 'docker system prune -f'
+                // sh 'docker container prune -f'
+                sh 'sudo docker build -t mohannode:1.0 .'
             }
         }
 
