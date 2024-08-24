@@ -46,7 +46,7 @@ pipeline {
             steps{
                 // sh 'docker system prune -f'
                 // sh 'docker container prune -f'
-                sh 'sudo docker build -t mohannode:1.0 .'
+                sh 'docker build -t mohannode:1.0 .'
             }
         }
 
