@@ -42,6 +42,13 @@ pipeline {
                 sh 'cat trivyfs.txt'
             }
         }
+        stage("building the dcoker image"){
+            steps{
+                sh 'docker system prune -f'
+                sh 'docker container prune -f'
+                sh 'docker build -t mohannode:1.0 .'
+            }
+        }
 
     }
 }
