@@ -42,11 +42,7 @@ pipeline {
                 sh 'ls -l'
             }
         }
-        stage("performing owasp test"){
-            steps{
-                sh
-            }
-        }
+        
 
         stage("displaying the content"){
             steps{
