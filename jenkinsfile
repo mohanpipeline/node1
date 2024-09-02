@@ -16,7 +16,7 @@ pipeline {
         //         sh 'npm install'
         //     }
         // }
-      ?
+      
         stage("displying the files"){
             steps{
                 sh 'ls -l'
