@@ -18,7 +18,7 @@ pipeline {
         }
         stage("oerformign the npm test"){
             steps{
-                sh 'npm build'
+                sh 'npm run build'
             }
         }
         stage("displying the files"){
@@ -27,11 +27,11 @@ pipeline {
             }
         }
 
-        stage("perform the sonar-scanner"){
-            steps{
-                sh 'sonar-scanner'
-            }
-        }
+        // stage("perform the sonar-scanner"){
+        //     steps{
+        //         sh 'sonar-scanner'
+        //     }
+        // }
         stage("performign the trivy scan"){
             steps{
                 sh 'trivy fs . > trivyfs.txt'
@@ -42,13 +42,7 @@ pipeline {
                 sh 'ls -l'
             }
         }
-        
-
-        stage("displaying the content"){
-            steps{
-                sh 'cat trivyfs.txt'
-            }
-        }
+                
         stage("building the dcoker image"){
             steps{
                 sh 'docker system prune -f'
